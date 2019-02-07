@@ -11,7 +11,7 @@ if [ ! -z ${S2I_DEBUG} ]; then
   set -x
 fi
 
-pwd
+ls -l
 
 # Binary deployment is a single war
 if [ $(ls /opt/app/src/*.jar | wc -l) -eq 1 ]; then
