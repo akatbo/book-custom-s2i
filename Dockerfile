@@ -38,7 +38,7 @@ RUN mkdir -p /opt/app  && chown -R javauser: /opt/app
 
 COPY ./S2iScripts/ /usr/local/s2i
 
-RUN chown -R 1001:0 ./
+# RUN chown -R 1001:0 ./
 
 USER 10001
 
