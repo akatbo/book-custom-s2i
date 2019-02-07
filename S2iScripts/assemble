@@ -21,6 +21,6 @@ echo $PWD
 #  exit 1
 # fi
 
-ls -ltr $HOME
+mvn
 
 # mvn clean package -u
