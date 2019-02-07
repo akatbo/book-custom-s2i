@@ -7,7 +7,7 @@ RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.5.4/binaries/apac
      && mv /usr/share/apache-maven-3.5.4 /usr/share/maven  \
      && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
-ENV JAVA_HOME /usr/lib/jvm/java
+# ENV JAVA_HOME /usr/lib/jvm/java
 ENV MAVEN_HOME /usr/share/maven
 
 LABEL io.k8s.description="Platform for building and running Java8 applications" \
