@@ -1,7 +1,11 @@
 FROM centos:latest
-MAINTAINER noconnor@redhat.com
+MAINTAINER akatbo@gmail.com
 
 RUN yum install -y java wget mvn --setopt=tsflags=nodocs && yum -y clean all
+
+ RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz | tar xzf - -C /usr/share \
+     && mv /usr/share/apache-maven-3.5.4 /usr/share/maven  \
+     && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 LABEL io.k8s.description="Platform for building and running Java8 applications" \
       io.k8s.display-name="Java8" \
