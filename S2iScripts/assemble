@@ -10,7 +10,9 @@ if [ ! -z ${S2I_DEBUG} ]; then
 	echo "turning on assembly debug";
   set -x
 fi
-PWD
+
+pwd
+
 # Binary deployment is a single war
 if [ $(ls /opt/app/src/*.jar | wc -l) -eq 1 ]; then
   mv /opt/app/src/*.jar /opt/app/openshift-app.jar
