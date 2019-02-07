@@ -22,6 +22,8 @@ echo $PWD
 # fi
 ls /opt/app/src 
 
-# mvn build
+cd /opt/app/src
+
+mvn build
 
 # mvn clean package -u
