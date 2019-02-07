@@ -24,6 +24,6 @@ ls /opt/app/src
 
 cd /opt/app/src
 
-mvn build
+mvn clean package -U
 
 # mvn clean package -u
