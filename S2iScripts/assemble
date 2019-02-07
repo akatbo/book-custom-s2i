@@ -17,10 +17,10 @@ echo $PWD
 # if [ $(ls /opt/app/src/*.jar | wc -l) -eq 1 ]; then
 #  mv /opt/app/src/*.jar /opt/app/openshift-app.jar
 # else
-#  echo "Jar not found in /opt/app/src/"
+#  echo "Jar not found in /opt/app/src/"build
 #  exit 1
 # fi
 
-mvn --version
+mvn build
 
 # mvn clean package -u
