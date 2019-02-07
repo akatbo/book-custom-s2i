@@ -20,4 +20,7 @@ echo $PWD
 #  echo "Jar not found in /opt/app/src/"
 #  exit 1
 # fi
-mvn clean package -u
+
+mvn --version
+
+# mvn clean package -u
