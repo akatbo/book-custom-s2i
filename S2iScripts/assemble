@@ -20,7 +20,7 @@ echo $PWD
 #  echo "Jar not found in /opt/app/src/"build
 #  exit 1
 # fi
-ls /opt/app 
+ls /opt/app/src 
 
 # mvn build
 
