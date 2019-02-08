@@ -26,4 +26,6 @@ cd /opt/app/src
 
 mvn clean package -U
 
+ls /opt/app/src
+
 # mvn clean package -u
