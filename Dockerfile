@@ -2,15 +2,6 @@
 FROM openshift/base-centos7
 MAINTAINER akatbo@gmail.com
 
-# RUN yum install -y java wget mvn --setopt=tsflags=nodocs && yum -y clean all
-
-# RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz | tar xzf - -C /usr/share \
-#     && mv /usr/share/apache-maven-3.5.4 /usr/share/maven  \
-#     && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-
-# ENV JAVA_HOME /usr/lib/jvm/java
-# ENV MAVEN_HOME /usr/share/maven
-
 ENV JAVA_VERSON 1.8.0
 ENV MAVEN_VERSION 3.5.4
 
@@ -36,9 +27,6 @@ LABEL io.k8s.description="Platform for building and running Java8 applications" 
 RUN mkdir -p /opt/app
 
 RUN adduser --system --base-dir /opt/app -u 10001 javauser && chown -R javauser: /opt/app
-
-# RUN mkdir -p /opt/app  && chown -R javauser: /opt/app
-
 
 COPY ./S2iScripts/ /usr/local/s2i
 
