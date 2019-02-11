@@ -39,5 +39,5 @@ else
   exit 1
 fi
 
-ls -l
+# ls -l
 # mvn clean package -u
