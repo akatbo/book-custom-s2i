@@ -33,7 +33,7 @@ if [ $(ls /opt/app/src/target/*.jar | wc -l) -eq 1 ]; then
    
    cd /opt/app/output
    
-   mv ./opt/app/src/target/*.jar service-server.jar
+   mv /opt/app/src/target/*.jar service-server.jar
 else
   echo "Jar not found in /opt/app/src/"target
   exit 1
