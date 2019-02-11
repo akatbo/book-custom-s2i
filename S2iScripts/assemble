@@ -26,12 +26,17 @@ mvn clean package -U
 
 # Binary deployment is a single war
 if [ $(ls /opt/app/src/target/*.jar | wc -l) -eq 1 ]; then
-   mv /opt/app/src/target/*.jar /opt/app/src/deploy/service-server.jar
+
+   rm -rf /opt/app/src/output
+   
+   mkdir -p /opt/app-root/output
+   
+   mv /opt/app/src/target/*.jar /opt/app/src/output/service-server.jar
 else
-  echo "Jar not found in /opt/app/src/"build
+  echo "Jar not found in /opt/app/src/"target
   exit 1
 fi
 
-ls /opt/app/src/deploy
+ls /opt/app/src/output
 
 # mvn clean package -u
