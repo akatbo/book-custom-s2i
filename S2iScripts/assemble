@@ -11,8 +11,6 @@ if [ ! -z ${S2I_DEBUG} ]; then
   set -x
 fi
 
-echo $PWD
-
 # Binary deployment is a single war
 # if [ $(ls /opt/app/src/*.jar | wc -l) -eq 1 ]; then
 #  mv /opt/app/src/*.jar /opt/app/openshift-app.jar
@@ -20,12 +18,20 @@ echo $PWD
 #  echo "Jar not found in /opt/app/src/"build
 #  exit 1
 # fi
-ls /opt/app/src 
+# ls /opt/app/src
 
 cd /opt/app/src
 
 mvn clean package -U
 
-ls /opt/app/src/target
+# Binary deployment is a single war
+if [ $(ls /opt/app/src/target/*.jar | wc -l) -eq 1 ]; then
+   mv /opt/app/src/target/*.jar /opt/app/src/deploy/service-server.jar
+else
+  echo "Jar not found in /opt/app/src/"build
+  exit 1
+fi
+
+ls /opt/app/src/deploy
 
 # mvn clean package -u
