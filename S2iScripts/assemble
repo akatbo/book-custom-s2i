@@ -39,6 +39,5 @@ else
   exit 1
 fi
 
-ls /opt/app/src/output
-
+ls -l
 # mvn clean package -u
